@@ -7,7 +7,10 @@ const Footer = () => {
     return ( 
         <footer>
             <nav className="bg-green-500">
-            <div className="relative flex items-center justify-between h-16">
+            
+            <div className=" max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+             <div className='flex justify-between '>
+             <div className="relative flex items-center justify-between h-16">
                 {/* <!-- Logotipo --> */}
                 <div className="flex-shrink-0">
                 <Link className='p-5' href="/">
@@ -20,8 +23,6 @@ const Footer = () => {
                 </Link>
                 </div>
                 </div>
-            <div className=" max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-             <div className='flex justify-between '>
 
                 {/* <!-- Enlaces de navegación --> */}
                 

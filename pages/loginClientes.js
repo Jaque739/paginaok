@@ -1,52 +1,50 @@
-import React, {useState}  from "react";
+import React, { useState} from 'react'
 import Layout from "../components/Layout";
+import { useRouter } from "next/router";
 import { useField, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { gql, useMutation } from '@apollo/client';
-import { useRouter } from "next/router";
 
-const AUTENTICAR_ADMI = gql `
-mutation autenticarAdmi($input: AutenticarInput) {
-    autenticarAdmi(input: $input) {
-        token
-    }
-}
-`;
 
-const Login = () => {
+const AUTENTICAR_US = gql `
+mutation autenticarUsuario ($input: AutenticarUsInput) {
+  autenticarUsuario(input: $input) {
+    token
+  }
+  }
+  `;
 
-//routing
+const LoginClientes = () => {
 
-const router = useRouter();
+  const router = useRouter();
 
     const [mensaje, gudardarMensaje] = useState(null);
 
 //Mutation para crear nuevos admis en apollo
-    const [autenticarAdmi] = useMutation(AUTENTICAR_ADMI);
+    const [autenticarUsuario] = useMutation(AUTENTICAR_US);
 
    const formik = useFormik ({
     initialValues: {
-        email: '',
-        password: ''
+        us: '',
+        contra: ''
     },
     validationSchema: Yup.object ({
-        email: Yup.string()
-                    .email('El correo es invalido')
+        us: Yup.string()
                     .required('El email no puede ir vacio'),
-        password: Yup.string()
+        contra: Yup.string()
                      .required('La contraseña es obligatoria')
     }),
 
     onSubmit: async valores => {
         //console.log(valores);
-        const {email, password } = valores;
+        const {us, contra } = valores;
 
         try{
-            const {data} = await autenticarAdmi ({
+            const {data} = await autenticarUsuario ({
                 variables: {
                     input: {
-                        email,
-                        password
+                        us,
+                        contra
                     }
                 }
             });
@@ -54,7 +52,7 @@ const router = useRouter();
             gudardarMensaje('Autenticando...');
 
             //Guardar el token en localstorage
-            const {token} = data.autenticarAdmi;
+            const {token} = data.autenticarUsuario;
             localStorage.setItem('token', token);
 
             //Redireccionar hacia cliente
@@ -97,44 +95,44 @@ const mostrarMensaje = () =>{
                     
 
                     <div className= "mb-4">
-                        <label className="block text-black text-sm font-bold mb-2" htmlFor="email">
-                            Correo Electronico
+                        <label className="block text-black text-sm font-bold mb-2" htmlFor="us ">
+                            Usuario
                         </label>
                         <input
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline "
-                        id="email"
-                        type="email"
-                        placeholder="Correo Usuario"
+                        id="us"
+                        type="text"
+                        placeholder=" Usuario"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.email}
+                        value={formik.values.us}
                         />
                     </div>
-                    {formik.touched.email && formik.errors.email ? (
+                    {formik.touched.us && formik.errors.us ? (
                         <div className="my-2 bg-yellow-300 border-l-4 border-yellow-600 text-black p-4">
                             <p className="font-bold">Error</p>
-                            <p>{formik.errors.email}</p>
+                            <p>{formik.errors.us}</p>
                         </div>
                     ) :  null }
 
                     <div className= "mb-4">
-                        <label className="block text-black text-sm font-bold mb-2" htmlFor="password">
+                        <label className="block text-black text-sm font-bold mb-2" htmlFor="contra">
                             Contraseña
                         </label>
                         <input
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline "
-                        id="password"
+                        id="contra"
                         type="password"
                         placeholder="Contraseña"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        value={formik.values.password}
+                        value={formik.values.contra}
                         />
                     </div>
-                    {formik.touched.password && formik.errors.password ? (
+                    {formik.touched.contra && formik.errors.contra ? (
                         <div className="my-2 bg-yellow-300 border-l-4 border-yellow-600 text-black p-4">
                             <p className="font-bold">Error</p>
-                            <p>{formik.errors.password}</p>
+                            <p>{formik.errors.contra}</p>
                         </div>
                     ) :  null }
                     
@@ -154,5 +152,4 @@ const mostrarMensaje = () =>{
     )
 }
 
-export default Login;
-
+export default LoginClientes;

@@ -29,22 +29,19 @@ const Layout = ({children}) =>{
                 
             // ) : 
             (
-              <div className=" min-h-screen">
+              <div>
                 {/* <div className="flex min-h-screen"> */}
                 <Sidebar/>
                
-                <div className="flex ">
+                <div>
                     <main className = "w-full "> 
                     {/* <main className = "sm:w-2/3 xl:w-4/5 sm:min-h-screen ">  */}
-                        {children}
-                        
+                        {children} 
                     </main>
                 </div>
                 <Footer/>   
             </div>  
             )}
-
-            
            
         </>
     );

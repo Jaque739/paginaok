@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/Layout';
+import Contactos from '../components/Contactos';
 import Link from 'next/Link';
 import Image from 'next/image';
 import pic from '../imagenes/inicio.png';
@@ -10,8 +11,11 @@ import td from '../imagenes/3D.png';
 import tj1 from '../imagenes/tarjeta1.png';
 import tj2 from '../imagenes/tarjeta2.png';
 import tj3 from '../imagenes/tarjeta3.png';
-import tj4 from '../imagenes/tarjeta4.png'
+import tj4 from '../imagenes/tarjeta4.png';
+import Example from '../components/Botondes';
+
 import { useEffect } from 'react';
+
 
 
 const Index = () => (
@@ -34,9 +38,8 @@ const Index = () => (
                         <div className='text-3xl m-5 '>
                             <p >¿Ya cuentas con un RA?</p>  
                         </div>
-                        <div className='rounded-full border border-black text-3xl m-5 pr-3 pl-3 text-center sm:bg-blue-200'>
-                            <button><Link className='p-5' href="/login">Entrar
-                            </Link>  </button>
+                        <div className='rounded-full text-3xl m-5 pr-3 pl-3 text-center '>
+                            <Example></Example>
                             
                         </div>
                         
@@ -151,63 +154,9 @@ const Index = () => (
                 <div className='bg-green-400 text-center text-4xl font-bold pt-10  border border black'  id='Inicio' >Contactanos</div>
                 <h1 className="text-center text-2xl text-black font-light flex flex-col justify-center font-bold mb-2">¡Hagamos de tu lugar una Realidad Aumentada!</h1>
                 <h1 className="text-center text-2xl text-black font-light flex flex-col justify-center">Completa el formulario y nos pondremos en contacto contigo.</h1>
+                 
+                 <Contactos> </Contactos>
 
-         <div className="flex justify-center mt-5">
-            <div className="w-full max-w-sm">
-                <form className="bg-green-300 rounded shadow-md px-8 pt-6 pb-8 mb-4 border border-black">
-                    <div className= "mb-4">
-                        <label className="block text-black text-sm font-bold mb-2" htmlFor="nombre">
-                            Nombre
-                        </label>
-                        <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline "
-                        id="nombre"
-                        type="nombre"
-                        placeholder="Nombre"
-                        />
-                    </div>
-                    <div className= "mb-4">
-                        <label className="block text-black text-sm font-bold mb-2" htmlFor="email">
-                            Email
-                        </label>
-                        <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline "
-                        id="email"
-                        type="email"
-                        placeholder="Correro electronico"
-                        />
-                    </div>
-                    <div className= "mb-4">
-                        <label className="block text-black text-sm font-bold mb-2" htmlFor="telefono">
-                            Telefono
-                        </label>
-                        <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline "
-                        id="telefono"
-                        type="telefono"
-                        placeholder="Telefono"
-                        />
-                    </div>
-                    <div className= "mb-4">
-                        <label className="block text-black text-sm font-bold mb-2" htmlFor="mensaje">
-                            Mesaje
-                        </label>
-                        <input
-                        className="shadow appearance-none border rounded w-full py-10  px-3 text-black leading-tight focus:outline-none focus:shadow-outline "
-                        id="mensaje"
-                        type="mesaje"
-                        placeholder="Por favor, incluye toda la información."
-                        />
-                    </div>
-                    <input
-                    type="submit"
-                    className="bg-white w-full mt-5 p-2 text-black uppercas hover:bg-gray-300"
-                    value="Enviar"
-                    />
-                </form>
-
-            </div>
-         </div>
                 <div>
                 <div className='bg-white text-center text-red-100 text-4xl  p-5 '  id='Inicio' >______________</div>
                 
