@@ -45,6 +45,8 @@ return (
         <Layout>
             <div className='h-screen'>
             <div className="flex justify-end mt-6">
+            <Link href={"/sitios"} className='bg-blue-800 font-bold uppercase text-xs text-white shadow-md rounded py-5 px-5 mt-5 mr-5 hover:bg-gray-500'>Sitios Registrados</Link>
+
             <Link href={"/nuevocliente"} className='bg-blue-800 font-bold uppercase text-xs text-white shadow-md rounded py-5 px-5 mt-5 mr-5 hover:bg-gray-500'>Nuevo Clientes</Link>
 
             <button 

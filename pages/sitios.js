@@ -3,6 +3,7 @@ import Layout from '../components/Layout.js';
 import {gql, useQuery} from '@apollo/client';
 import Sitio from '../components/Sitio.js';
 import Link from 'next/Link.js';
+import {useRouter} from 'next/router';
 
 const OBTENER_SITIOS = gql`
     query obtenerSitio {
@@ -31,6 +32,7 @@ const OBTENER_SITIOS = gql`
 
 const Sitios = () => {
 
+    const router = useRouter();
     //Consultar los productos
     const {data, loading, error} = useQuery(OBTENER_SITIOS);
 
@@ -40,6 +42,11 @@ const Sitios = () => {
   
     if(loading) return 'Cargando.....';
 
+    const cerrarSesion = () => {
+        router.push('/loginClientes');
+    
+    }
+
     return(
         <div>
             <Layout>
@@ -47,7 +54,7 @@ const Sitios = () => {
             
             <div className='h-screen'>
             <div className="flex justify-end mt-6">
-            <Link href={"/nuevocliente"} className='bg-blue-800 font-bold uppercase text-xs text-white shadow-md rounded py-5 px-5 mt-5 mr-5 hover:bg-gray-500'>Nuevo Clientes</Link>
+            <Link href={"/clientes"} className='bg-blue-800 font-bold uppercase text-xs text-white shadow-md rounded py-5 px-5 mt-5 mr-5 hover:bg-gray-500'>Clientes</Link>
 
             <button 
             onClick={() => cerrarSesion()}

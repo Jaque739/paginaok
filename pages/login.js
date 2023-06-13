@@ -87,7 +87,7 @@ const mostrarMensaje = () =>{
         <>
         <Layout>
 
-         <h1 className="text-center text-2xl text-black font-light  justify-center">Login</h1>   
+         <h1 className="text-center text-2xl text-black font-light  justify-center">Inicio de sesion Administrador</h1>   
 
          {mensaje && mostrarMensaje() }
 

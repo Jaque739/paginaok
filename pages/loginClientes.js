@@ -58,7 +58,7 @@ const LoginClientes = () => {
             //Redireccionar hacia cliente
             setTimeout(() =>{
                 gudardarMensaje(null);
-                router.push('/clientes');
+                router.push('/principalClientes');
             }, 3000);                    
 
         } catch (error) {
@@ -85,7 +85,7 @@ const mostrarMensaje = () =>{
         <>
         <Layout>
 
-         <h1 className="text-center text-2xl text-black font-light  justify-center">Login</h1>   
+         <h1 className="text-center text-2xl text-black font-light  justify-center">Inicio de sesion Cliente</h1>   
 
          {mensaje && mostrarMensaje() }
 

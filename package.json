@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.12",
+    "@googlemaps/react-wrapper": "^1.1.35",
     "@headlessui/react": "^1.7.14",
     "@headlessui/vue": "^1.7.13",
     "@heroicons/react": "^2.0.18",
     "@heroicons/vue": "^2.0.18",
     "@iconify/icons-heroicons-solid": "^1.2.6",
+    "@react-google-maps/api": "^2.18.1",
     "@react-icons/all-files": "^4.1.0",
     "@sweetalert2/themes": "^5.0.15",
     "@types/node": "18.15.12",
