@@ -30,7 +30,7 @@ const HeaderCliente = () => {
         router.push('/loginClientes');
     
     }
-    console.log(data);
+    //console.log(data);
 
     return (
 <nav className="bg-green-500">

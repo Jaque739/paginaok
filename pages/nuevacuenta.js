@@ -9,17 +9,17 @@ import {useMutation, gql} from '@apollo/client';
 const NUEVA_CUENTA = gql `
 mutation nuevoAdmi($input: AdmiInput){
     nuevoAdmi (input: $input) {
-    nombre
-    apellidos
-    email
-    password
+        nombre
+        apellidos
+        email
+        password
     
     }
   }
 `;
 
 const NuevaCuenta = () => {
-    //State pata el mensaje 
+    //State para el mensaje 
 
     const [mensaje, gudardarMensaje] = useState(null)
 
