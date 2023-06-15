@@ -7,7 +7,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+const Boton = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -60,3 +60,4 @@ export default function Example() {
     </Menu>
   )
 }
+export default Boton;

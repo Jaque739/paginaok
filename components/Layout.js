@@ -17,25 +17,13 @@ const Layout = ({children}) =>{
             </Head>
 
             {
-            //Codigo que elimina la barra
-
-            // router.pathname === '/login' || router.pathname === '/nuevacuenta' ? (
-            //     <div className="bg-white-800 min-h-screen flex flex-col justify-center">
-            //         <div>
-            //             {children}
-            //         </div>
-                    
-            //     </div>
-                
-            // ) : 
+            
             (
               <div>
-                {/* <div className="flex min-h-screen"> */}
                 <Sidebar/>
                
                 <div>
                     <main className = "w-full "> 
-                    {/* <main className = "sm:w-2/3 xl:w-4/5 sm:min-h-screen ">  */}
                         {children} 
                     </main>
                 </div>

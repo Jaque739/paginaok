@@ -43,6 +43,7 @@ return (
 
         <div >
         <Layout>
+        <div className='bg-gray-00 text-center text-white text-4xl  pt-5 pb-5 '  id='Inicio' >______________</div>
             <div className='h-screen'>
             <div className="flex justify-end mt-6">
             <Link href={"/sitios"} className='bg-blue-800 font-bold uppercase text-xs text-white shadow-md rounded py-5 px-5 mt-5 mr-5 hover:bg-gray-500'>Sitios Registrados</Link>

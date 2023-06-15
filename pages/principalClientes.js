@@ -1,6 +1,4 @@
 import React from 'react';
-
-import HeaderCliente from '../components/HeaderCliente';
 import { useRouter } from 'next/router';
 import { gql, useMutation, useQuery } from '@apollo/client';
 import Layout2 from '../components/Layout2';
@@ -18,7 +16,7 @@ const OBTENER_CLIENTE = gql  `
        }
     }`
 
-function PrincipalClientes() {
+const  PrincipalClientes = () => {
 
     //obtener la Id actual
     const router = useRouter();
@@ -34,7 +32,7 @@ function PrincipalClientes() {
 
     return (
         <Layout2>
-           
+           <div className='bg-gray-00 text-center text-white text-4xl  pt-5 pb-5 '  id='Inicio' >______________</div>
             <div className="flex  h-screen mt-5">
             {/* <p>{obtenerUsuarioID.nombre}</p>
                 <p>{obtenerUsuarioID.apellido}</p> */}
@@ -77,4 +75,4 @@ function PrincipalClientes() {
   )
 }
 
-export default PrincipalClientes
+export default PrincipalClientes;

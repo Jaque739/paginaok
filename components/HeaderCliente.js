@@ -33,7 +33,8 @@ const HeaderCliente = () => {
     //console.log(data);
 
     return (
-<nav className="bg-green-500">
+      <div className='fixed top-0 w-full bg-white shadow'>
+        <nav className="bg-green-500">
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
               <div className="relative flex items-center justify-between h-16">
                 {/* <!-- Logotipo --> */}
@@ -54,7 +55,8 @@ const HeaderCliente = () => {
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                      <Link href="/principalClientes" className="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">Bienvenido: {us}</Link>
-                      <Link href="/MiSitio" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Mi Sitio</Link>
+                      <Link href="/nueviSitio" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Agregar Sitio</Link>
+                      <Link href="/miSitio" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Mi Sitio</Link>
                       <Link href="/loginClientes" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Cerrar Sesión</Link>
                       
                     </div>
@@ -63,7 +65,7 @@ const HeaderCliente = () => {
               </div>
             </div>
           </nav>
-
+    </div>
     )
 }
 
