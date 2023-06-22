@@ -64,17 +64,16 @@ const Sitios = () => {
                 Cerrar Sesión
             </button>
             </div>
-        <div className='grid justify-items-stretch '>
+        <div className='grid justify-items-center '>
             <table className="table-auto shadow-md mt-10 m-10 justify-self-auto">
                 <thead className="bg-gray-800">
                     <tr className="text-white">
-                        <th className="w-1/7 py-2">Nombre </th>
-                        <th className="w-1/7 py-2">id </th>
-                        <th className="w-1/7 py-2">rfc </th>
-                        <th className="w-1/7 py-2"> telefono </th>
-                        <th className="w-1/7 py-2">direc </th>
-                        <th className="w-1/7 py-2">Eliminar </th>
-                        <th className="w-1/7 py-2">Editar </th>
+                        <th className="w-1/5 py-2">Nombre </th>
+                        <th className="w-1/5 py-2">RFC </th>
+                        <th className="w-1/5 py-2">Dirección </th>
+                        <th className="w-1/5 py-2"> Telefono </th>
+                        <th className="w-1/5 py-2"> Horarios </th>
+                      
                     </tr>
                 </thead>
 

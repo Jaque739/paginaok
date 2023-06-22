@@ -7,6 +7,7 @@ import Layout2 from '../components/Layout2';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import Link from 'next/Link.js';
+import Appi from '../components/appi';
 
 const NUEVO_SITIO = gql `
 mutation nuevoSitio($input: SitioInput) {
@@ -107,7 +108,7 @@ const  NuevoSitio = () => {
     })
 
     // Ingresa tu clave de API de Google Maps aquí
-    const apiKey = 'AIzaSyCj3ZWDxruMqMWbgVZ9CKFfdvC3_dSv-d4';
+    const apiKey = 'AIzaSyCpd8huJdCjVTMOww5HWXP1-aYW-jzGdB0';
 
     // Define las coordenadas del lugar que deseas mostrar
     const location = {
@@ -134,6 +135,7 @@ const  NuevoSitio = () => {
           <h2 className="text-base font-semibold leading-7 text-gray-900 ml-10">Perfil del Sitio</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600 ml-10">
           Esta información se mostrará públicamente, así que tenga cuidado con lo que comparte.</p>
+          
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <label htmlFor="photo" className="block text-sm font-medium leading-6 text-gray-900 ml-10">
@@ -476,8 +478,9 @@ const  NuevoSitio = () => {
         </button>
       </div>
     </form>
+         
             <div className='flex justify-center'>
-                <LoadScript googleMapsApiKey={apiKey}>
+                {/* <LoadScript googleMapsApiKey={apiKey}>
                     <GoogleMap
                         mapContainerStyle={{ height: '600px', width: '72%' }}
                         zoom={13}
@@ -485,7 +488,9 @@ const  NuevoSitio = () => {
                     >
                         <Marker position={location} />
                     </GoogleMap>
-                </LoadScript>
+                </LoadScript> */}
+            <Appi></Appi>
+
             </div>
         </Layout2>
     

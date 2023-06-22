@@ -74,6 +74,7 @@ const LoginClientes = () => {
 
 const mostrarMensaje = () =>{
     return(
+        
         <div className="bg-red-300 py-2 px-3 w-full my-3 max-w-sm text-center mx-auto">
             <p>{mensaje}</p>
         </div>
@@ -84,7 +85,7 @@ const mostrarMensaje = () =>{
     return (
         <>
         <Layout>
-
+        <div className='bg-gray-00 text-center text-white text-4xl  pt-5 pb-5 '  id='Inicio' >______________</div>
          <h1 className="text-center text-2xl text-black font-light  justify-center">Inicio de sesion Cliente</h1>   
 
          {mensaje && mostrarMensaje() }

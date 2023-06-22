@@ -34,8 +34,7 @@ const  PrincipalClientes = () => {
         <Layout2>
            <div className='bg-gray-00 text-center text-white text-4xl  pt-5 pb-5 '  id='Inicio' >______________</div>
             <div className="flex  h-screen mt-5">
-            {/* <p>{obtenerUsuarioID.nombre}</p>
-                <p>{obtenerUsuarioID.apellido}</p> */}
+          
 
 <div>
       <div className="px-4 sm:px-0 ml-10">
@@ -68,7 +67,7 @@ const  PrincipalClientes = () => {
                 
           </dl>
           </div>
-          </div>
+</div>
             </div>
         </Layout2>
     

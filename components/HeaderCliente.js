@@ -54,7 +54,7 @@ const HeaderCliente = () => {
                 <div className="flex">
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
-                     <Link href="/principalClientes" className="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700">Bienvenido: {us}</Link>
+                     <Link href="/principalClientes" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 text-white  focus:outline-none focus:text-white focus:bg-gray-700">Bienvenido: {us}</Link>
                       <Link href="/nueviSitio" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Agregar Sitio</Link>
                       <Link href="/miSitio" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Mi Sitio</Link>
                       <Link href="/loginClientes" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">Cerrar Sesión</Link>

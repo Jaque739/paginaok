@@ -1,0 +1,22 @@
+import React from 'react'
+
+const Sitio3 = ({sitio}) => {
+    const {pag_web, fb, ig, form_pago, foto_pres, foto_menu, foto_lugar} = sitio;
+    return(
+
+        
+        <tr >
+            <td className='justify-center w-1/5 px-5 py-2'>{pag_web}</td>
+            <td className='justify-center w-1/5  px-5 py-2'>{fb}</td>
+            <td className='justify-center w-1/5  px-5 py-2'>{ig}</td>
+            <td className='justify-center w-1/5  px-5 py-2'>{form_pago}</td>
+            <td className='justify-center w-1/5  px-5 py-2'>{foto_pres}</td>
+            <td className='justify-center w-1/5  px-5 py-2'>{foto_menu}</td>
+            <td className='justify-center w-1/5  px-5 py-2'>{foto_lugar}</td>
+        </tr>
+       
+    );
+
+}
+
+export default Sitio3
