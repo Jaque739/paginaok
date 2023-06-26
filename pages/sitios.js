@@ -17,6 +17,7 @@ const OBTENER_SITIOS = gql`
             pag_web
             fb
             ig
+            pueblo,
             form_pago
             foto_pres
             foto_menu

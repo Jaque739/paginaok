@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import { useRouter } from 'next/router';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import Link from 'next/Link.js';
 import Appi from '../components/appi';
+import Fotos from '../components/Fotos';
 
 const NUEVO_SITIO = gql `
 mutation nuevoSitio($input: SitioInput) {
@@ -20,6 +21,7 @@ mutation nuevoSitio($input: SitioInput) {
     pag_web
     fb
     ig
+    pueblos
     form_pago
     foto_pres
     foto_menu
@@ -49,6 +51,7 @@ const  NuevoSitio = () => {
         pag_web: '',
         fb: '',
         ig: '',
+        pueblos: '',
         form_pago: 'url',
         foto_pres: 'url',
         foto_menu: 'url',
@@ -66,18 +69,14 @@ const  NuevoSitio = () => {
                   .required('El horario es obligatorio'),
       direc: Yup.string()
                   .required('La dirección es obligatoria'),
-      pag_web: Yup.string(),
-      fb: Yup.string(),
-      ig: Yup.string(),
-      form_pago: Yup.string(),
-      foto_pres: Yup.string(),
-      foto_menu: Yup.string(),
-      foto_lugar: Yup.string(),             
+      pueblos: Yup.string()
+                  .required('El nombre del pueblo magico es obligatoria'),
+                 
                  
   }),
   onSubmit: async valores =>  {
     //console.log (valores)
-      const {nombre, rfc, telf, horario, direc,pag_web, fb, ig, form_pago, foto_lugar, foto_menu, foto_pres} = valores
+      const {nombre, rfc, telf, horario, direc,pag_web, fb, ig, pueblos, form_pago, foto_lugar, foto_menu, foto_pres} = valores
       //console.log(valores)
     try { 
       const {data} = await nuevoSitio({
@@ -91,6 +90,7 @@ const  NuevoSitio = () => {
             pag_web, 
             fb, 
             ig, 
+            pueblos,
             form_pago, 
             foto_lugar, 
             foto_menu,
@@ -323,6 +323,156 @@ const  NuevoSitio = () => {
               </div>
             </div>
 
+            <div className="sm:col-span-3">
+              <label htmlFor="pueblos" className="block text-sm font-medium leading-6 text-gray-900">
+                Pueblo magico donde se encuentra tu sitio:
+              </label>
+              <div className="mt-2">
+                <select
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  id="pueblos"
+                  name="pueblos"
+                  value={formik.values.pueblos}
+                  onChange={formik.handleChange}
+                  onBlurCapture={formik.pueblos}
+                  
+                  
+                >
+                  <option>Selecciona una opción</option>
+                  <option>Aculco, Estado de México</option>
+                  <option>Ajijic, Jalisco</option>
+                  <option>Álamos, Sonora</option>
+                  <option>Amealco de Bonfil, Querétaro</option>
+                  <option>Aquismón, San Luis Potosí</option>
+                  <option>Arteaga, Coahuila</option>
+                  <option>Atlixco, Puebla</option>
+                  <option>Bacalar, Quintana Roo</option>
+                  <option>Batopilas, Chihuahua</option>
+                  <option>Bernal, Querétaro</option>
+                  <option>Bustamante, Nuevo León</option>
+                  <option>Cadereyta de Montes, Querétaro</option>
+                  <option>Calvillo, Aguascalientes</option>
+                  <option>Candela, Coahuila</option>
+                  <option>Capulálpam de Méndez, Oaxaca</option>
+                  <option>Casas Grandes, Chihuahua</option>
+                  <option>Chiapa de Corzo, Chiapas</option>
+                  <option>Chignahuapan, Puebla</option>
+                  <option>Cholula, Puebla</option>
+                  <option>Coatepec, Veracruz</option>
+                  <option>Comala, Colima</option>
+                  <option>Comitán, Chiapas</option>
+                  <option>Comonfort, Guanajuato</option>
+                  <option>Compostela de Indias, Nayarit</option>
+                  <option>Cosalá, Sinaloa</option>
+                  <option>Coscomatepec, Veracruz</option>
+                  <option>Creel, Chihuahua</option>
+                  <option>Cuatro Ciénegas, Coahuila</option>
+                  <option>Cuetzalan del Progreso, Puebla</option>
+                  <option>Cuitzeo del Porvenir, Michoacán</option>
+                  <option>Dolores Hidalgo, Guanajuato</option>
+                  <option>El Oro, Estado de México</option>
+                  <option>El Rosario, Sinaloa</option>
+                  <option>El Fuerte, Sinaloa</option>
+                  <option>Huamantla, Tlaxcala</option>
+                  <option>Huasca de Ocampo, Hidalgo</option>
+                  <option>Huauchinango, Puebla</option>
+                  <option>Huautla de Jiménez, Oaxaca</option>
+                  <option>Huichapan, Hidalgo</option>
+                  <option>Isla Aguada, Campeche</option>
+                  <option>Isla Mujeres, Quintana Roo</option>
+                  <option>Ixtapan de la Sal, Estado de México</option>
+                  <option>Izamal, Yucatán</option>
+                  <option>Jala, Nayarit</option>
+                  <option>Jalpa de Cánovas, Guanajuato</option>
+                  <option>Jalpan de Serra, Querétaro</option>
+                  <option>Jerez de García Salinas, Zacatecas</option>
+                  <option>Jiquilpan de Juárez, Michoacán</option>
+                  <option>Lagos de Moreno, Jalisco</option>
+                  <option>Linares, Nuevo León</option>
+                  <option>Loreto, Baja California Sur</option>
+                  <option>Magdalena de Kino, Sonora</option>
+                  <option>Malinalco, Estado de México</option>
+                  <option>Maní, Yucatán</option>
+                  <option>Mapimí, Durango</option>
+                  <option>Mascota, Jalisco</option>
+                  <option>Mazamitla, Jalisco</option>
+                  <option>Mazunte, Oaxaca</option>
+                  <option>Melchor Múzquiz, Coahuila</option>
+                  <option>Metepec, Estado de México</option>
+                  <option>Mexcaltitán, Nayarit</option>
+                  <option>Mier, Tamaulipas</option>
+                  <option>Mineral de Angangueo, Michoacán</option>
+                  <option>Mineral de Pozos, Guanajuato</option>
+                  <option>Mineral del Chico, Hidalgo</option>
+                  <option>Mocorito, Sinaloa</option>
+                  <option>Nombre de Dios, Durango</option>
+                  <option>Nochistlán de Mejía, Zacatecas</option>
+                  <option>Pahuatlán, Puebla</option>
+                  <option>Palenque, Chiapas</option>
+                  <option>Palizada, Campeche</option>
+                  <option>Papantla, Veracruz</option>
+                  <option>Paracho de Verduzco, Michoacán</option>
+                  <option>Parras de la Fuente, Coahuila</option>
+                  <option>Pátzcuaro, Michoacán</option>
+                  <option>Pinos, Zacatecas</option>
+                  <option>Real de Asientos, Aguascalientes</option>
+                  <option>Real de Catorce, San Luis Potosí</option>
+                  <option>Real de Monte, Hidalgo</option>
+                  <option>Salvatierra, Guanajuato</option>
+                  <option>San Cristóbal de las Casas, Chiapas</option>
+                  <option>San Joaquín, Querétaro</option>
+                  <option>San José de Gracia, Aguascalientes</option>
+                  <option>San Juan Teotihuacán y San Martín de las Pirámides, Edo de México</option>
+                  <option>San Pablo Villa de Mitla, Oaxaca</option>
+                  <option>San Pedro Tlaquepaque, Jalisco</option>
+                  <option>San Pedro y San Pablo Teposcolula, Oaxaca</option>
+                  <option>San Sebastián del Oeste, Jalisco</option>
+                  <option>Santa Catarina Juquila, Oaxaca</option>
+                  <option>Santa Clara del Cobre, Michoacán</option>
+                  <option>Santa María del Río, San Luis Potosí</option>
+                  <option>Santiago, Nuevo León</option>
+                  <option>Sayulita, Nayarit</option>
+                  <option>Sisal, Yucatán</option>
+                  <option>Sombrerete, Zacatecas</option>
+                  <option>Tacámbaro, Michoacán</option>
+                  <option>Talpa de Allende, Jalisco</option>
+                  <option>Tapalpa, Jalisco</option>
+                  <option>Tapijulapa, Tabasco</option>
+                  <option>Taxco de Alarcón, Guerrero</option>
+                  <option>Tecate, Baja California</option>
+                  <option>Tecozautla, Hidalgo</option>
+                  <option>Tepotzotlán, Estado de México</option>
+                  <option>Tepoztlán, Morelos</option>
+                  <option>Tequila, Jalisco</option>
+                  <option>Tequisquiapan, Querétaro</option>
+                  <option>Tetela de Ocampo, Puebla</option>
+                  <option>Teúl de González Ortega, Zacatecas</option>
+                  <option>Tlatlauquitepec, Puebla</option>
+                  <option>Tlayacapan, Morelos</option>
+                  <option>Tlalpujahua de Rayón, Michoacán</option>
+                  <option>Tlaxco, Tlaxcala</option>
+                  <option>Todos Santos, Baja California Sur</option>
+                  <option>Tonatico, Estado de México</option>
+                  <option>Tula, Tamaulipas</option>
+                  <option>Tulum, Quintana Roo</option>
+                  <option>Tzintzuntzan, Michoacán</option>
+                  <option>Valladolid, Yucatán</option>
+                  <option>Valle de Bravo, Estado de México</option>
+                  <option>Viesca, Coahuila</option>
+                  <option>Villa del Carbón, Estado de México</option>
+                  <option>Xico, Veracruz</option>
+                  <option>Xicotepec, Puebla</option>
+                  <option>Xilitla, San Luis Potosí</option>
+                  <option>Yuriria, Guanajuato</option>
+                  <option>Zacatlán de las Manzanas, Puebla</option>
+                  <option>Zempoala, Hidalgo</option>
+                  <option>Zimapán, Hidalgo</option>
+                  <option>Zozocolco de Hidalgo, Veracruz</option>
+
+                </select>
+              </div>
+            </div>
+
             {formik.touched.direc && formik.errors.direc ? (
                         <div className="my-2 bg-yellow-300 border-l-4 border-yellow-600 text-black-500 p-4">
                             <p className="font-bold">Error</p>
@@ -342,9 +492,9 @@ const  NuevoSitio = () => {
                     <input
                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                       id="comments"
-                      name="comments"
+                      name="efectivo"
                       type="checkbox"
-                      
+                     
                     />
                   </div>
                   <div className="text-sm leading-6">
@@ -355,11 +505,13 @@ const  NuevoSitio = () => {
                 </div>
                 <div className="relative flex gap-x-3">
                   <div className="flex h-6 items-center">
-                    <input
+                    <input 
+                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                       id="candidates"
-                      name="candidates"
+                      name="tarjeta"
                       type="checkbox"
-                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                  
+
                     />
                   </div>
                   <div className="text-sm leading-6">
@@ -372,7 +524,7 @@ const  NuevoSitio = () => {
                   <div className="flex h-6 items-center">
                     <input
                       id="offers"
-                      name="offers"
+                      name="transferencia"
                       type="checkbox"
                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                     />
@@ -395,17 +547,8 @@ const  NuevoSitio = () => {
               </label>
               <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                 <div className="text-center">
-                  <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
-                  <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                    <label
-                      htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
-                    >
-                      <span>Carga tus fotos</span>
-                      <input id="file-upload" name="file-upload" type="file" className="sr-only" />
-                    </label>
-                    <p className="pl-1">o arrastrar y soltar</p>
-                  </div>
+                     {/* <Fotos></Fotos> */}
+                
                   <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF hasta 10MB</p>
                 </div>
               </div>
@@ -436,7 +579,7 @@ const  NuevoSitio = () => {
 
             <div className="col-span-full">
               <label htmlFor="cover-photo" className="block text-sm font-medium leading-6 text-gray-900">
-                Agrega tus fotos de los presios 
+                Agrega tus fotos de los precios 
               </label>
               <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                 <div className="text-center">

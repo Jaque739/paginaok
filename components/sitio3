@@ -6,13 +6,13 @@ const Sitio3 = ({sitio}) => {
 
         
         <tr >
-            <td className='justify-center w-1/5 px-5 py-2'>{pag_web}</td>
-            <td className='justify-center w-1/5  px-5 py-2'>{fb}</td>
-            <td className='justify-center w-1/5  px-5 py-2'>{ig}</td>
-            <td className='justify-center w-1/5  px-5 py-2'>{form_pago}</td>
-            <td className='justify-center w-1/5  px-5 py-2'>{foto_pres}</td>
-            <td className='justify-center w-1/5  px-5 py-2'>{foto_menu}</td>
-            <td className='justify-center w-1/5  px-5 py-2'>{foto_lugar}</td>
+            <td className='justify-center w-1/7 px-5 py-2'>{pag_web}</td>
+            <td className='justify-center w-1/7  px-5 py-2'>{fb}</td>
+            <td className='justify-center w-1/7  px-5 py-2'>{ig}</td>
+            <td className='justify-center w-1/7  px-5 py-2'>{form_pago}</td>
+            <td className='justify-center w-1/7  px-5 py-2'>{foto_pres}</td>
+            <td className='justify-center w-1/7  px-5 py-2'>{foto_menu}</td>
+            <td className='justify-center w-1/7  px-5 py-2'>{foto_lugar}</td>
         </tr>
        
     );

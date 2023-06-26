@@ -5,6 +5,7 @@ import { useQuery, gql, useMutation} from '@apollo/client';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Swal from 'sweetalert2';
+import Link from 'next/Link.js';
 
 
 const OBTENER_CLIENTE = gql`
@@ -122,6 +123,8 @@ try {
 
 return(
     <Layout>
+        <div className='bg-gray-00 text-center text-white text-4xl  pt-5 pb-5 '  id='Inicio' >______________</div>
+
        <div className="flex justify-center mt-5">
                 <div className="w-full max-w-lg">
 
@@ -282,6 +285,12 @@ return(
                                     className= "bg-gray-800 w-full mt-5 p-2 text-white uppercase fond-bold hover:bg-gray-500"
                                     value="Editar Cliente"
                                 />
+                                 <div>
+                    <Link href={"/clientes"} 
+                    className='bg-red-800 font-bold flex justify-center mt-6 p-3 uppercase text-xs text-white shadow-md rounded  hover:bg-gray-500'>
+                    Cancelar </Link>
+                        </div>
+
 
                                 </form>
                       )

@@ -72,10 +72,13 @@ console.log(data);
             <table>
                 <thead>
                     <tr>
-                     <th className="w-1/8 py-2">Pagina Web </th>
-                    <th className="w-1/8 py-2">Facebook </th>
-                     <th className="w-1/8 py-2">Instagram </th>
-                     <th className="w-1/8 py-2">Dirección </th>
+                     <th className="w-1/7 py-2">Pagina Web </th>
+                    <th className="w-1/7 py-2">Facebook </th>
+                     <th className="w-1/7 py-2">Instagram </th>
+                     <th className="w-1/7 py-2">Forma de pago </th>
+                     <th className="w-1/7 py-2">Foto de precios </th>
+                     <th className="w-1/7 py-2">Foto menu </th>
+                     <th className="w-1/7 py-2">Foto lugar </th>
                     </tr>
                 </thead>
                 <tbody className="bg-white">
